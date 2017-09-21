@@ -14,26 +14,27 @@
 <script>
 // Imports
 export default {
-    data() {
-        return {
+  data() {
+    return {
 
-        }
-    },
-    methods: {
+    };
+  },
+  methods: {
 
-    }
-}
+  },
+};
 </script>
 
 <style scoped>
 .topnav {
     background-color: #333;
     overflow: hidden;
-   padding-top: 70px; 
-    
+    padding-top: 70px;
 }
 
+
 /* Style the links inside the navigation bar */
+
 .topnav a {
     float: left;
     display: block;
@@ -44,16 +45,19 @@ export default {
     font-size: 17px;
 }
 
+
 /* Change the color of links on hover */
+
 .topnav a:hover {
     background-color: #ddd;
     color: black;
 }
 
+
 /* Add a color to the active/current link */
+
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
 }
-
 </style>
