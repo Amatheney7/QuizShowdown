@@ -6,10 +6,15 @@ if (!process.env.NODE_ENV) {
 }
 
 var opn = require('opn')
-var path = require('path')
 var express = require('express')
+const path = require('path');
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const db = require('../Db/dbConfig.js');
+const User = require('../db/Schema/user.js');
+const Promise = require('bluebird');
 var webpackConfig = (process.env.NODE_ENV === 'testing' || process.env.NODE_ENV === 'production')
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
@@ -83,6 +88,45 @@ devMiddleware.waitUntilValid(() => {
 })
 
 var server = app.listen(port)
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/signUp', (req, res, done) => {
+  var username = req.body.username;
+  var password = req.body.password;
+
+
+  User.findOne({ username: username })
+      .exec(function (err, found) {
+          if (!found) {
+              let user = new User({
+                  username: username,
+                  password: password
+              });
+              user.save((err, success) => {
+                  if (err) {
+                      console.log(err);
+                  } else {
+                      console.log('Welcome to the Game')
+                      res.redirect('/');
+                      
+                  }
+
+              })
+          } else {
+
+        
+         res.redirect('/signUp');
+
+          }
+      });
+
+});
+
+
+
+
 
 module.exports = {
   ready: readyPromise,

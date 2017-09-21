@@ -13,6 +13,10 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
+    "bluebird": "^3.5.0",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.12",
+    "require": "^2.4.20",
     "semver": "^5.4.1",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0"
