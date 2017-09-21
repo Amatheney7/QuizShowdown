@@ -1,22 +1,23 @@
 <template>
   <div id="app">
-    <nav-bar></nav-bar>
+  <navbar></navbar>
     <router-view></router-view>
-    <p>{{msg}}</p>
+    <footerbar></footerbar>
     
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 export default {
-  components: [
-    NavBar,
-  ],
+  components: {
+    navbar: NavBar,
+    footerbar: Footer,
+  },
   data() {
     return {
-      name: 'App',
       msg: 'testing',
     };
   },

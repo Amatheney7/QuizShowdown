@@ -7,23 +7,21 @@
 <script>
 // Imports
 export default {
-    data() {
-        return {
-            copyright: 'Copyright 2017 Quiz ShowDown'
-           
-        }    
-    },
-    methods: {
-       
-    }
-}
+  data() {
+    return {
+      copyright: 'Copyright 2017 Quiz ShowDown',
+
+    };
+  },
+  methods: {
+
+  },
+};
 </script>
 
 <style scoped>
-footer{
+footer {
     background-color: #333;
     overflow: hidden;
-
 }
-
 </style>
