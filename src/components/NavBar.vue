@@ -2,7 +2,7 @@
     <div>
         <div class="topnav" id="myTopnav">
             <router-link to="/home">Home</router-link>
-            <router-link to="/leaderBoard">leaderBoard</router-link>
+            <router-link to="/leaderBoard">LeaderBoard</router-link>
             <router-link to="/login">Login/signup</router-link>
             <router-link to="/stats">Stats</router-link>
             <router-link to="/quizType">Choose Quiz</router-link>
