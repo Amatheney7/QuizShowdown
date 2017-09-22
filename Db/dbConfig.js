@@ -1,4 +1,4 @@
-const MONGO_URI = 'mongodb://heroku_gqrcpps4:mh2sbp2gsb5mglhcr4jnccorvs@ds127564.mlab.com:27564/heroku_gqrcpps4';
+const MONGO_URI = 'mongodb://heroku_cwlh9m9t:ljbf70arra23a0emh603htqju5@ds147304.mlab.com:47304/heroku_cwlh9m9t';
 
 const mongoose = require('mongoose');
 
