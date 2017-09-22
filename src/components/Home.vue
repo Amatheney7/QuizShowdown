@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>Welcome to Quiz Showdown</p>
     
   </div>
 </template>
