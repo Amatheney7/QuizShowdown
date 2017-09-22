@@ -109,7 +109,7 @@ app.post('/signUp', (req, res, done) => {
                       console.log(err);
                   } else {
                       console.log('Welcome to the Game')
-                      res.redirect('/');
+                      res.end();
                       
                   }
 
@@ -117,7 +117,7 @@ app.post('/signUp', (req, res, done) => {
           } else {
 
         
-         res.redirect('/signUp');
+            res.end();
 
           }
       });
