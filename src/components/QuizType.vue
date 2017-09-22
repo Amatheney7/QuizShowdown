@@ -210,11 +210,11 @@ export default {
         this.count = 0;
       } else {
         this.count += 1;
-        this.answers = [this.quiz[this.count].correct_answer,
+        const temp = [this.quiz[this.count].correct_answer,
           this.quiz[this.count].incorrect_answers[1],
           this.quiz[this.count].incorrect_answers[2],
           this.quiz[this.count].incorrect_answers[0]];
-        this.answers = this.shuffle(this.answers);
+        this.answers = this.shuffle(temp);
         this.question = this.quiz[this.count].question;
         this.question = this.question.replace(/&#039;|&quot;/gi, () => "'");
       }
