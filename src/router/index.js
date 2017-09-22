@@ -32,6 +32,7 @@ export default new Router({
     },
     {
       path: '/quizType',
+      name: 'quiz',
       component: QuizType,
     },
     {
@@ -49,6 +50,10 @@ export default new Router({
     {
       path: '/quiz',
       component: Quiz,
+    },
+    {
+      path: '/a',
+      redirect: { name: 'quiz' },
     },
 
 

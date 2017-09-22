@@ -45,6 +45,7 @@
 
 
       </div>
+      <button v-on:click='hotReload()'>reload</button>
 
     </div>
 </template>
@@ -157,6 +158,9 @@ export default {
     };
   },
   methods: {
+    hotReload() {
+      window.location.replace('/#/login');
+    },
     shuffle(array) {
       let currentIndex = array.length;
       let temporaryValue;
@@ -223,6 +227,7 @@ export default {
       if (this.choice === this.quiz[this.count].correct_answer) {
         if (this.count + 1 <= this.formData.amount) {
           this.score += 1;
+          this.$http.post('/quiz');
         }
       }
       this.result = true;
