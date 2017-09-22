@@ -45,7 +45,7 @@
 
 
       </div>
-      <button v-on:click='hotReload()'>reload</button>
+      <!-- <button v-on:click='hotReload()'>reload</button> -->
 
     </div>
 </template>
