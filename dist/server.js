@@ -24,7 +24,7 @@ app.post('/signUp', (req, res) => {
                         console.log(err);
                     } else {
                         console.log('Welcome to the Game')
-                        res.redirect('/');
+                        res.end();
 
                     }
 
@@ -32,7 +32,7 @@ app.post('/signUp', (req, res) => {
             } else {
 
 
-                res.redirect('/signUp');
+                res.end();
 
             }
         });
