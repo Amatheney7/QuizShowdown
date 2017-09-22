@@ -183,15 +183,19 @@ export default {
           },
         },
       ).then((response) => {
-        this.populateQuiz = true;
-        this.quiz = response.body.results;
-        this.quiztime = true;
-        this.question = this.quiz[this.count].question;
-        this.question = this.question.replace(/&#039;|&quot;/gi, () => "'");
-        this.answers = [this.quiz[this.count].correct_answer,
-          this.quiz[this.count].incorrect_answers[1],
-          this.quiz[this.count].incorrect_answers[2],
-          this.quiz[this.count].incorrect_answers[0]];
+        if (response.body.results.length === 0) {
+          response.reload('/quizType');
+        } else {
+          this.populateQuiz = true;
+          this.quiz = response.body.results;
+          this.quiztime = true;
+          this.question = this.quiz[this.count].question;
+          this.question = this.question.replace(/&#039;|&quot;/gi, () => "'");
+          this.answers = [this.quiz[this.count].correct_answer,
+            this.quiz[this.count].incorrect_answers[1],
+            this.quiz[this.count].incorrect_answers[2],
+            this.quiz[this.count].incorrect_answers[0]];
+        }
       });
     },
     qNext() {
